@@ -2,16 +2,31 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import "./index.less"
 import { Row, Col } from 'antd';
-
+import  Utils  from "../../utils/utils";
 class Header extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            userName: ' 神 '
+            userName: ' 神 ',
+            sysTime: '2019-11-25 19 : 30 :10'
         }
     }
 
+    componentWillMount() {
+        this.timer = setInterval(() => {
+            let sysTime = Utils.formateDate(new Date().getTime());
+            this.setState({
+                sysTime:sysTime
+            })
+        }, 1000);
+    }
+
+    componentWillUnmount(){
+        if (this.timer) {
+            clearInterval(this.timer);
+        }
+    }
 
     render() {
         return (
@@ -30,7 +45,7 @@ class Header extends Component {
                         首页
                     </Col>
                     <Col span={20} className="weather">
-                        <span className="date">2019-11-25</span>
+                        <span className="date">{this.state.sysTime}</span>
                         <span className="weather_detail">天气不好呀</span>
 
                     </Col>
