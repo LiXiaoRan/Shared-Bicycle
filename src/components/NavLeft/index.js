@@ -44,7 +44,7 @@ class NavLeft extends Component {
                 <div className="logo">
                     {/* 这里写成 assets 是因为在外面访问不到public，这是正常写法*/}
                     <img src="assets/logo192.png" alt={'logo'}></img>
-                    <h1>🚴‍♀️系统</h1>
+                    <h1>🚴‍🚴‍♀️系统</h1>
                 </div>
                 <Menu theme="dark">
                     {this.state.menuTreeNode}
