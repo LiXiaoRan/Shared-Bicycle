@@ -15,9 +15,9 @@ export default class Main extends Component {
                     <li>
                         <Link to="/main/456">嵌套路由2</Link>
                     </li>
-                    {/* <li>
+                    <li>
                         <Link to="/main/t">嵌套路由3</Link>
-                    </li> */}
+                    </li>
                 </ul>
                 <hr/>
                 {this.props.children}
