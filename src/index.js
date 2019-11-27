@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import './index.css';
 // import './inde.less'
-import App from './router_demo/router2 nested/router';
+import App from './router_demo/router3/router';
 import 'antd/dist/antd.css'
 
 import Admin from './admin'
