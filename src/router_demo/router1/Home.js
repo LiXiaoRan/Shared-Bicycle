@@ -4,7 +4,7 @@ import Topic from './Topic';
 import Main from './Main';
 import About from './About';
 
-
+// 混合组件化的hash路由demo
 export default class Home extends Component {
     render() {
         return (
