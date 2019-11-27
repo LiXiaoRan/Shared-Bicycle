@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import "./index.less"
 import { Row, Col } from 'antd';
 import  Utils  from "../../utils/utils";
-import axios from '../../axios';
-import CryptoJS from 'crypto-js';
 class Header extends Component {
 
     constructor(props) {
