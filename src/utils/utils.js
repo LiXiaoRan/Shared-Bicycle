@@ -1,4 +1,8 @@
 export default {
+    /**
+     * 格式化时间
+     * @param {*} time 时间戳
+     */
     formateDate(time){
         if (!time) {
             return '';

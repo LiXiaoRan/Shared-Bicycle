@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import "./index.less"
 import { Row, Col } from 'antd';
 import  Utils  from "../../utils/utils";
+import axios from '../../axios';
+import CryptoJS from 'crypto-js';
 class Header extends Component {
 
     constructor(props) {
@@ -11,6 +13,7 @@ class Header extends Component {
             userName: ' 神 ',
             sysTime: '2019-11-25 19 : 30 :10'
         }
+        this.getWeatherAPIData=this.getWeatherAPIData.bind(this);
     }
 
     componentWillMount() {
@@ -20,12 +23,32 @@ class Header extends Component {
                 sysTime:sysTime
             })
         }, 1000);
+        this.getWeatherAPIData();
     }
 
     componentWillUnmount(){
         if (this.timer) {
             clearInterval(this.timer);
         }
+    }
+
+    /** 获取天气数据 */
+    getWeatherAPIData(){
+        // 没有找到稳定可用的天气api
+        // let city=encodeURIComponent("北京")
+        // axios.jsonp({
+        //     // url: `http://api.map.baidu.com/telematics/v3/weather?location=${city}&output=json&ak=E4805d16520de693a3fe707cdc962045`
+        //     url:'http://t.weather.sojson.com/api/weather/city/101030100'
+        // }).then((res) => {
+        //     if(res.status === 'success'){
+        //         // let data = res.result[0].weather_data[0];
+        //         // this.setState({
+        //         //     dayPictureUrl:data.dayPictureUrl,
+        //         //     weather:data.weather
+        //         // })
+        //         // console.log('success ',data);
+        //     } 
+        // })
     }
 
     render() {
@@ -46,7 +69,9 @@ class Header extends Component {
                     </Col>
                     <Col span={20} className="weather">
                         <span className="date">{this.state.sysTime}</span>
-                        <span className="weather_detail">天气不好呀</span>
+                        {/* <span className="weather_detail">天气不好呀</span> */}
+                        {/* <iframe title="weather_detail" className="weather_detail" scrolling="no" src="https://tianqiapi.com/api.php?style=ta&skin=pitaya"  width="250px"  allowtransparency="true"></iframe> */}
+                        <iframe title="weather_detail" className="weather_detail" scrolling="no" fontSize={11} src="https://tianqiapi.com/api.php?style=tc&skin=pitaya"   allowtransparency="true" ></iframe>
 
                     </Col>
                 </Row>
