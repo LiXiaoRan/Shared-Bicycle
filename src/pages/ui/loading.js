@@ -20,6 +20,9 @@ export default class Loading extends Component {
                     <Spin tip="加载中">
                         <Alert title="title" type="error" description="description description description"></Alert>
                     </Spin>
+                    <Spin tip="加载中" indicator={icon}>
+                        <Alert title="title" type="error" description="description description description"></Alert>
+                    </Spin>
                 </Card>
             </div>
         )
