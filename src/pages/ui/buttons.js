@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Button ,Radio} from "antd";
+import { Card, Button, Radio } from "antd";
 import './ui.less';
 export default class Buttons extends Component {
 
@@ -7,7 +7,7 @@ export default class Buttons extends Component {
         super(props);
         this.state = {
             loading: true,
-            size:'default'
+            size: 'default'
         }
     }
 
@@ -20,9 +20,9 @@ export default class Buttons extends Component {
         })
     }
 
-    handleRadioChange(e){
+    handleRadioChange(e) {
         this.setState({
-            size:e.target.value
+            size: e.target.value
         })
     }
 
@@ -51,22 +51,22 @@ export default class Buttons extends Component {
                     <Button loading={this.state.loading} shape="circle"></Button>
                     <Button type="primary" onClick={this.handleClickLoading.bind(this)}>关闭</Button>
                 </Card>
-                <Card title="按钮组">
+                <Card title="按钮组" style={{ marginBottom: 10 }}>
                     <Button.Group>
-                    <Button type="primary" icon="left">返回</Button>
-                    <Button type="primary" icon="right">前进</Button>
+                        <Button type="primary" icon="left">返回</Button>
+                        <Button type="primary" icon="right">前进</Button>
                     </Button.Group>
                 </Card>
 
                 <Card title="按钮尺寸" className="card_wrap">
-                <Radio.Group value={this.state.size} onChange={this.handleRadioChange.bind(this)}>
-                    <Radio value="small">小</Radio>
-                    <Radio value="default">中</Radio>
-                    <Radio value="large">大</Radio>
-                </Radio.Group>
-                <Button type="primary" size={this.state.size} >按钮</Button>
-                <Button type="primary" size={this.state.size} >按钮</Button>
-                <Button type="primary" size={this.state.size} >按钮</Button>
+                    <Radio.Group value={this.state.size} onChange={this.handleRadioChange.bind(this)}>
+                        <Radio value="small">小</Radio>
+                        <Radio value="default">中</Radio>
+                        <Radio value="large">大</Radio>
+                    </Radio.Group>
+                    <Button type="primary" size={this.state.size} >按钮</Button>
+                    <Button type="primary" size={this.state.size} >按钮</Button>
+                    <Button type="primary" size={this.state.size} >按钮</Button>
                 </Card>
             </div>
         )

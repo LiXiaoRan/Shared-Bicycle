@@ -19,15 +19,15 @@ export default class Modals extends Component {
         })
     }
 
-    handleConfirm(type){
+    handleConfirm(type) {
         //生成一个轻量级的对话框   Modal.confirm和Modal['confirm']是一个意思，所以这里可以动态的修改
         Modal[type]({
-            title:"title",
-            content:"content",
-            onOk(){
+            title: "title",
+            content: "content",
+            onOk() {
                 console.log('OK');
             },
-            onCancel(){
+            onCancel() {
                 console.log('cancel');
             }
         })
@@ -44,10 +44,10 @@ export default class Modals extends Component {
                 </Card>
 
                 <Card title="信息确认框" className="card_wrap">
-                    <Button type="primary" onClick={this.handleConfirm.bind(this,'confirm')} >confirm</Button>
-                    <Button type="primary" onClick={this.handleConfirm.bind(this,'info')} >info</Button>
-                    <Button type="primary" onClick={this.handleConfirm.bind(this,'success')}>success</Button>
-                    <Button type="primary" onClick={this.handleConfirm.bind(this,'warning')}>warning</Button>
+                    <Button type="primary" onClick={this.handleConfirm.bind(this, 'confirm')} >confirm</Button>
+                    <Button type="primary" onClick={this.handleConfirm.bind(this, 'info')} >info</Button>
+                    <Button type="primary" onClick={this.handleConfirm.bind(this, 'success')}>success</Button>
+                    <Button type="primary" onClick={this.handleConfirm.bind(this, 'warning')}>warning</Button>
                 </Card>
 
                 <Modal title="open" visible={this.state.showModal1} onCancel={() => {
