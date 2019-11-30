@@ -242,7 +242,7 @@ class register extends Component {
                                 valuePropName: "checked",
                                 initialValue: true,
                                 rules: []
-                            })(<Checkbox >必须要这个<a href="#">霸王条款</a>同意</Checkbox>)}
+                            })(<Checkbox >必须要同意这个<a href="#">霸王条款</a>，哈哈哈</Checkbox>)}
                         </FormItem>
 
                         
