@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Row, Col } from 'antd';
+import { Card, Row, Col, Modal } from 'antd';
 import './ui.less';
 
 
@@ -15,7 +15,8 @@ export default class gallery extends Component {
                 ['11.png', '12.png', '13.png', '14.png', '15.png'],
                 ['16.png', '17.png', '18.png', '19.png', '20.png'],
                 ['21.png', '22.png', '23.png', '24.png', '25.png']
-            ]
+            ],
+            modalVisible:false
         }
     }
 
@@ -36,6 +37,15 @@ export default class gallery extends Component {
         });
     }
 
+    openGallery=(imgSrc)=>{
+        if (imgSrc) {
+            this.setState({
+                currentImg:'/gallery/' +imgSrc,
+                modalVisible:true
+            })
+        }
+    }
+
     render() {
         // const imgList=this.state.imgs.map((item,i)=>{
         //     return (<Card key={i}
@@ -44,10 +54,10 @@ export default class gallery extends Component {
         //         <Meta title="react" description="img description" />
         //     </Card>)
         // })
-        const imgList = this.state.imgs.map((list) => list.map((item, i) => {
-            return <Card
+        const imgList = this.state.imgs.map((list) => list.map((imgSrc, i) => {
+            return <Card key={i}
                 style={{ marginBottom: 10 }}
-                cover={<img src={'/gallery/' + item} onClick={() => this.openGallery(item)} alt="" />}>
+                cover={<img src={'/gallery/' + imgSrc} onClick={() => this.openGallery(imgSrc)} alt="" />}>
                 <Card.Meta title="React Admin" description="66 Elena gallery"/>
             </Card>
         }))
@@ -71,6 +81,11 @@ export default class gallery extends Component {
                        {imgList[4]}
                    </Col>  
                 </Row>
+                <Modal title="高清大图" className="img_modal" visible={this.state.modalVisible} onCancel={()=>{this.setState({modalVisible:false})}}
+                  footer={null}
+                >
+                    <img src={this.state.currentImg} alt=""></img>
+                </Modal>
             </div>
         )
     }
