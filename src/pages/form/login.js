@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Card, Form, Input, Button, message, Icon, Checkbox } from "antd";
-import { checkServerIdentity } from "tls";
 
 const Item = Form.Item;
 class login extends Component {

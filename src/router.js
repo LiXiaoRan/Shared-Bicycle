@@ -14,6 +14,8 @@ import Tabs from './pages/ui/tabs';
 import Gallery from './pages/ui/gallery';
 import Carousels from "./pages/ui/carousel";
 import FormLogin from './pages/form/login';
+import FormReginster from './pages/form/register';
+
 
 export default class IRouter extends Component {
     render() {
@@ -36,6 +38,7 @@ export default class IRouter extends Component {
                                         <Route path='/admin/ui/gallery' component={Gallery}></Route>
                                         <Route path='/admin/ui/carousel' component={Carousels}></Route>
                                         <Route path='/admin/form/login' component={FormLogin}></Route>
+                                        <Route path='/admin/form/reg' component={FormReginster}></Route>
                                         
                                         
                                         <Route component={NoMatch}></Route>
