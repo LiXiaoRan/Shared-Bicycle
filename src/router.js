@@ -16,7 +16,7 @@ import Carousels from "./pages/ui/carousel";
 import FormLogin from './pages/form/login';
 import FormReginster from './pages/form/register';
 import BasicTable from './pages/table/BasicTable';
-
+import BikeMap from './pages/map/bikeMap';
 
 export default class IRouter extends Component {
     render() {
@@ -41,6 +41,7 @@ export default class IRouter extends Component {
                                         <Route path='/admin/form/login' component={FormLogin}></Route>
                                         <Route path='/admin/form/reg' component={FormReginster}></Route>
                                         <Route path='/admin/table/basic' component={BasicTable}></Route>
+                                        <Route path='/admin/bikeMap' component={BikeMap}></Route>
                                         
                                         
                                         <Route component={NoMatch}></Route>

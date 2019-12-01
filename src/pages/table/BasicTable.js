@@ -6,7 +6,8 @@ export default class BasicTable extends Component {
         super(props);
         this.state = {
             columns: [], //表头
-            dataSource: [] //数据源
+            dataSource: [], //数据源
+            dataSource2: [], //数据源
         };
     }
 
@@ -110,6 +111,14 @@ export default class BasicTable extends Component {
                     <Table
                         bordered
                         dataSource={this.state.dataSource}
+                        columns={this.state.columns}
+                    />
+                </Card>
+
+                <Card title="动态数据渲染表格" style={{marginTop:10}}>
+                    <Table
+                        bordered
+                        dataSource={this.state.dataSource2}
                         columns={this.state.columns}
                     />
                 </Card>
