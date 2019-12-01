@@ -1,3 +1,6 @@
+系统截图：
+![](https://raw.githubusercontent.com/LiXiaoRan/PicGoBed/master/img/%E5%9B%BE%E7%89%87%E5%A2%99.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
